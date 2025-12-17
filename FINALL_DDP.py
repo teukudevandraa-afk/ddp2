@@ -22,7 +22,7 @@ if halaman == "Latar belakang":
     st.write("Aplikasi konversi mata uang ini dibuat untuk memudahkan pengguna menghitung nilai tukar antarnegara dengan cepat dan akurat. Karena setiap mata uang memiliki nilai berbeda dan kurs dapat berubah setiap hari, aplikasi ini membantu pengguna—seperti wisatawan, pelaku bisnis, dan pembeli online—untuk mengetahui harga sebenarnya tanpa perlu menghitung manual. Dengan begitu, transaksi internasional menjadi lebih mudah, praktis, dan bebas dari kesalahan perhitungan.")
 
 
-# HALAMAN 1: RUPIAH (IDR) <-> DOLLAR (USD)
+# Rupiah ke dollar (DEVANDRA)
 if halaman == "💵 IDR & USD (Amerika)":
     st.title("Konversi Rupiah & Dollar")
     
