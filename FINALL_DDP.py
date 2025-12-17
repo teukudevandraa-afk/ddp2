@@ -157,15 +157,15 @@ elif halaman == "IDR & KR (Korea Selatan)":
     col_kurs, col_space = st.columns([2,1])
     with col_kurs:
         kurs_kr = st.number_input(
-            "Kurs 1 KR saat ini (dalam Rp):", 
-            value=11.35, 
+            "Kurs 1000 KR saat ini (dalam Rp):", 
+            value=11.278, 
             step=10.0,
             format="%.0f"
         )
 
     st.write("---")
 
-    # -- Pilihan Arah Konversi --
+    # konversi
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Won (IDR ➡ WON)", "Won ke Rupiah (WON ➡ IDR)"],
