@@ -1,13 +1,12 @@
 import streamlit as st
 
-# --- 1. Konfigurasi Halaman Dasar ---
 st.set_page_config(
     page_title="Konersi Mata Uang",
     page_icon="🌍",
     layout="centered"
 )
 
-# --- 2. Menu Navigasi (Sidebar) ---
+# navigasi
 st.sidebar.title("Navigasi")
 halaman = st.sidebar.selectbox(
     "Pilih Mata Uang:",
@@ -19,18 +18,15 @@ st.sidebar.info("Tips: Anda bisa mengubah nilai 'Kurs saat ini' di menu utama ag
 
 if halaman == "Latar belakang":
     st.header("Konversi mata uang, Rupiah, Dollar , Ringgit, Yen, Won")
-    st.image("mata uang.png", width=500)
+    st.image("mata_uang.png", width=500)
     st.write("Aplikasi konversi mata uang ini dibuat untuk memudahkan pengguna menghitung nilai tukar antarnegara dengan cepat dan akurat. Karena setiap mata uang memiliki nilai berbeda dan kurs dapat berubah setiap hari, aplikasi ini membantu pengguna—seperti wisatawan, pelaku bisnis, dan pembeli online—untuk mengetahui harga sebenarnya tanpa perlu menghitung manual. Dengan begitu, transaksi internasional menjadi lebih mudah, praktis, dan bebas dari kesalahan perhitungan.")
 
 
-# ==========================================
 # HALAMAN 1: RUPIAH (IDR) <-> DOLLAR (USD)
-# ==========================================
 if halaman == "💵 IDR & USD (Amerika)":
     st.title("Konversi Rupiah & Dollar")
     
-    # -- Pengaturan Kurs USD --
-    # Nilai default estimasi (1 USD = Rp 15.900)
+    # kurs usd
     col_kurs, col_space= st.columns([2,1])
     with col_kurs:
         kurs_usd = st.number_input(
@@ -42,14 +38,14 @@ if halaman == "💵 IDR & USD (Amerika)":
 
     st.write("---")
 
-    # -- Pilihan Arah Konversi --
+ # tombol
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Dollar (IDR ➡ USD)", "🇺🇸 Dollar ke Rupiah (USD ➡ IDR)"],
         horizontal=True
     )
 
-    # -- Input dan Logika --
+    # Input 
     if arah == "🇮🇩 Rupiah ke Dollar (IDR ➡ USD)":
         input_idr = st.number_input("Masukkan jumlah Rupiah (Rp):", min_value=0.0, step=10000.0)
         
@@ -58,7 +54,8 @@ if halaman == "💵 IDR & USD (Amerika)":
             st.metric(label="Hasil dalam Dollar", value=f"$ {hasil:,.2f}")
             st.caption(f"Rumus: {input_idr:,.0f} / {kurs_usd:,.0f}")
 
-    else: # USD ke IDR
+    else:
+        # USD ke IDR
         input_usd = st.number_input("Masukkan jumlah Dollar ($):", min_value=0.0, step=1.0)
         
         if st.button("Hitung ke Rupiah", type="primary"):
@@ -66,15 +63,11 @@ if halaman == "💵 IDR & USD (Amerika)":
             st.metric(label="Hasil dalam Rupiah", value=f"Rp {hasil:,.0f}")
             st.caption(f"Rumus: {input_usd:,.2f} x {kurs_usd:,.0f}")
 
-
-# ==========================================
-# HALAMAN 2: RUPIAH (IDR) <-> RINGGIT (MYR)
-# ==========================================
+# rupiah ke ringgit
 elif halaman == "🕌 IDR & MYR (Malaysia)":
     st.title("Konversi Rupiah & Ringgit")
 
-    # -- Pengaturan Kurs MYR --
-    # Nilai default estimasi (1 MYR = Rp 3.550)
+    # kurs ringgit defaulnya 3350
     col_kurs, col_space = st.columns([2,1])
     with col_kurs:
         kurs_myr = st.number_input(
