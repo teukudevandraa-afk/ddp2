@@ -38,7 +38,7 @@ if halaman == "💵 IDR & USD (Amerika)":
 
     st.write("---")
 
- # tombol
+ # pilih pengkorversian
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Dollar (IDR ➡ USD)", "🇺🇸 Dollar ke Rupiah (USD ➡ IDR)"],
@@ -63,11 +63,11 @@ if halaman == "💵 IDR & USD (Amerika)":
             st.metric(label="Hasil dalam Rupiah", value=f"Rp {hasil:,.0f}")
             st.caption(f"Rumus: {input_usd:,.2f} x {kurs_usd:,.0f}")
 
-# rupiah ke ringgit
+# rupiah ke ringgit (KEY)
 elif halaman == "🕌 IDR & MYR (Malaysia)":
     st.title("Konversi Rupiah & Ringgit")
 
-    # kurs ringgit defaulnya 3350
+    # kurs ringgit defaulnya 3550
     col_kurs, col_space = st.columns([2,1])
     with col_kurs:
         kurs_myr = st.number_input(
@@ -79,14 +79,14 @@ elif halaman == "🕌 IDR & MYR (Malaysia)":
 
     st.write("---")
 
-    # -- Pilihan Arah Konversi --
+    # pilih pengkorversian
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Ringgit (IDR ➡ MYR)", "🇲🇾 Ringgit ke Rupiah (MYR ➡ IDR)"],
         horizontal=True
     )
 
-    # -- Input dan Logika --
+    # INPUT
     if arah == "🇮🇩 Rupiah ke Ringgit (IDR ➡ MYR)":
         input_idr = st.number_input("Masukkan jumlah Rupiah (Rp):", min_value=0.0, step=10000.0)
         
@@ -95,7 +95,8 @@ elif halaman == "🕌 IDR & MYR (Malaysia)":
             st.metric(label="Hasil dalam Ringgit", value=f"RM {hasil:,.2f}")
             st.caption(f"Rumus: {input_idr:,.0f} / {kurs_myr:,.0f}")
 
-    else: # MYR ke IDR
+    # MYR ke IDR
+    else: 
         input_myr = st.number_input("Masukkan jumlah Ringgit (RM):", min_value=0.0, step=10.0)
         
         if st.button("Hitung ke Rupiah", type="primary"):
@@ -103,14 +104,11 @@ elif halaman == "🕌 IDR & MYR (Malaysia)":
             st.metric(label="Hasil dalam Rupiah", value=f"Rp {hasil:,.0f}")
             st.caption(f"Rumus: {input_myr:,.2f} x {kurs_myr:,.0f}")
 
-# ==========================================
-# HALAMAN 3: RUPIAH (IDR) <-> YEN (JPY)
-# ==========================================
+# Rupiah Ke Yen (DAPA)
 elif halaman == "🗾 IDR & JPY (Jepang)":
     st.title("Konversi Rupiah & Yen")
 
-    # -- Pengaturan Kurs JPY --
-    # Nilai default estimasi (1 JPY = Rp 107.40)
+    
     col_kurs, col_space = st.columns([2,1])
     with col_kurs:
         kurs_jpy = st.number_input(
@@ -122,14 +120,14 @@ elif halaman == "🗾 IDR & JPY (Jepang)":
 
     st.write("---")
 
-    # -- Pilihan Arah Konversi --
+    # Pilih pengkorversian
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Yen (IDR ➡ JPY)", "Yen ke Rupiah (JPY ➡ IDR)"],
         horizontal=True
     )
 
-    # -- Input dan Logika --
+    # Input
     if arah == "🇮🇩 Rupiah ke Yen (IDR ➡ JPY)":
         input_idr = st.number_input("Masukkan jumlah Rupiah (Rp):", min_value=0.0, step=10000.0)
         
@@ -138,7 +136,8 @@ elif halaman == "🗾 IDR & JPY (Jepang)":
             st.metric(label="Hasil dalam Yen", value=f"Yen {hasil:,.2f}")
             st.caption(f"Rumus: {input_idr:,.0f} / {kurs_jpy:,.0f}")
 
-    else: # JPY ke IDR
+    # YEN ke IDR
+    else:
         input_jpy = st.number_input("Masukkan jumlah Yen (JPY):", min_value=0.0, step=10.0)
         
         if st.button("Hitung ke Rupiah", type="primary"):
@@ -146,14 +145,11 @@ elif halaman == "🗾 IDR & JPY (Jepang)":
             st.metric(label="Hasil dalam Rupiah", value=f"Rp {hasil:,.0f}")
             st.caption(f"Rumus: {input_jpy:,.2f} x {kurs_jpy:,.0f}")
 
-# ==========================================
-# HALAMAN 4: RUPIAH (IDR) <-> WON (KR)
-# ==========================================
+# Rupiah Ke Won (AZIZAH)
 elif halaman == "IDR & KR (Korea Selatan)":
     st.title("Konversi Rupiah & Won")
 
-    # -- Pengaturan Kurs KR --
-    # Nilai default estimasi (1 KR = Rp 11.35)
+    
     col_kurs, col_space = st.columns([2,1])
     with col_kurs:
         kurs_kr = st.number_input(
@@ -165,14 +161,14 @@ elif halaman == "IDR & KR (Korea Selatan)":
 
     st.write("---")
 
-    # konversi
+    # Pilih Pengkorversian
     arah = st.radio(
         "Pilih Arah Konversi:",
         ["🇮🇩 Rupiah ke Won (IDR ➡ WON)", "Won ke Rupiah (WON ➡ IDR)"],
         horizontal=True
     )
 
-    # -- Input dan Logika --
+    # Input
     if arah == "🇮🇩 Rupiah ke Won (IDR ➡ WON)":
         input_idr = st.number_input("Masukkan jumlah Rupiah (Rp):", min_value=0.0, step=10000.0)
         
@@ -181,7 +177,8 @@ elif halaman == "IDR & KR (Korea Selatan)":
             st.metric(label="Hasil dalam Won", value=f"Won {hasil:,.2f}")
             st.caption(f"Rumus: {input_idr:,.0f} / {kurs_kr:,.0f}")
 
-    else: # KR ke IDR
+    # Won Ke Rupiah
+    else:
         input_kr = st.number_input("Masukkan jumlah Won (WON):", min_value=0.0, step=10.0)
         
         if st.button("Hitung ke Rupiah", type="primary"):
