@@ -158,7 +158,7 @@ elif halaman == "IDR & KR (Korea Selatan)":
     with col_kurs:
         kurs_kr = st.number_input(
             "Kurs 1000 KR saat ini (dalam Rp):", 
-            value=11.278, 
+            value=11278.0, 
             step=10.0,
             format="%.0f"
         )
