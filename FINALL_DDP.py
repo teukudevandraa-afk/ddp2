@@ -6,6 +6,13 @@ st.set_page_config(
     layout="centered"
 )
 
+# function
+def hitung_bagi(nilai_input, kurs):
+    return nilai_input / kurs
+
+def hitung_kali(nilai_input, kurs):
+    return nilai_input * kurs
+
 # navigasi
 st.sidebar.title("Navigasi")
 halaman = st.sidebar.selectbox(
