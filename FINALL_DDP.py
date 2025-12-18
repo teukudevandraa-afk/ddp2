@@ -13,6 +13,12 @@ def hitung_bagi(nilai_input, kurs):
 def hitung_kali(nilai_input, kurs):
     return nilai_input * kurs
 
+# looping
+daftar_info = ["USD: Dollar", "MYR: Ringgit", "JPY: Yen", "KR: Won"]
+st.sidebar.write("Mata Uang Tersedia:")
+for item in daftar_info:
+    st.sidebar.markdown(f"- {item}")
+
 # navigasi
 st.sidebar.title("Navigasi")
 halaman = st.sidebar.selectbox(
